@@ -1,0 +1,112 @@
+1.1.3
+Outline view
+The Outline view displays an outline of a structured file 
+that is currently open in the editor area,
+and lists structural elements. 
+The contents of the Outline view are editor specific.
+ In the example below, which is for a Java source file,
+ the structural elements are classes, fields, and methods.
+ The contents of the toolbar are also editor specific.
+
+
+1. Kunde richtig anzeigen
+2. Ausgeliehende Produkte zum Kunde anzeigen
+3. Ausleihen Event
+4. Rückgabe?!
+
+13 Testklassen
+6 UI
+
+1.2.2
+
+interface VerleihService extends ObservableService
+{
+    void verleiheAn(Kunde kunde, List<Medium> medien, Datum ausleihDatum);
+
+    boolean istVerleihenMoeglich(Kunde kunde, List<Medium> medien);
+
+    Kunde getEntleiherFuer(Medium medium);
+
+    List<Medium> getAusgelieheneMedienFuer(Kunde kunde);
+
+    List<Verleihkarte> getVerleihkarten();
+
+    void nimmZurueck(List<Medium> medien, Datum rueckgabeDatum);
+
+    boolean istVerliehen(Medium medium);
+
+    boolean sindAlleNichtVerliehen(List<Medium> medien);
+
+    boolean sindAlleVerliehen(List<Medium> medien);
+ 
+    boolean kundeImBestand(Kunde kunde);
+
+    boolean mediumImBestand(Medium medium);
+
+    boolean medienImBestand(List<Medium> medien);
+
+    List<Verleihkarte> getVerleihkartenFuer(Kunde kunde);
+
+    Verleihkarte getVerleihkarteFuer(Medium medium);
+
+}
+
+1.3.1 Test zwecken? Methoden nicht richtig implementiert... verleiheAn() gar kein Code;
+	kein Vertragsmodell..
+	DummyImplementation ohne Logik 
+	
+	
+
+1.3.2 class VerleihServiceImpl extends AbstractObservableService implements
+        VerleihService
+	class DummyVerleihService extends AbstractObservableService implements
+        VerleihService
+gleiches Interface...
+alt + shift + g
+
+1.3.3
+
+1. Kunde richtig anzeigen
+2. Ausgeliehende Produkte zum Kunde anzeigen
+3. Ausleihen Event triggered zwar speichert jedoch nichts ab
+4. Rückgabe?!
+5.Anzeige was ausgeliehen worden ist
+
+
+1.4
+Step over f6 step into f5
+
+1.6.2 
+https://docs.oracle.com/javase/8/docs/technotes/guides/language/assert.html
+
+assert Expression1 : Expression2 ;
+	Falls Expresion 1 true mach weiter;
+	sonst Gib Expression2 aus.
+
+     * @require entleiher != null
+     * @require medium != null
+     * @require ausleihdatum != null
+     * 
+     * @ensure #getEntleiher() == entleiher
+     * @ensure #getMedium() == medium
+     * @ensure #getAusleihdatum() == ausleihdatum
+     
+    require VORBEDINGUNGEN als asserts  
+    assert entleiher != null : "Vorbedingung verletzt: entleiher != null";
+    assert medium != null : "Vorbedingung verletzt: medium != null";
+    assert ausleihdatum != null : "Vorbedingung verletzt: ausleihdatum != null";
+
+    ensure NACHBEDINGUNGEN (teilweise JunitTests)
+
+
+1.7.3
+statische Typ kann sich nicht ändern Dynamischer Typ schon 
+Dynamische Typ erst zur Laufzeit bekannt
+     if ( medium  instanceof CD){
+         CD cd = (CD)medium;
+Wenn es eine CD ist alles gut, sonst Casting error!!!         *    
+medium und cd zeigen aufs gleiche Objekt!
+   
+1.8.3
+Man braucht kein InstanceOf mehr, da m weiß welches Medium es ist und dynamisch in die jeweilige Klasse geht und dort die Methode getFormatiertenString aufruft. Dynamisches Binden...
+Da m ein Medium ist und alle Klasen die ein Medium sind das Interface Medium implementiert haben ist auch sicher gestellt, dass es in m die Methode getFormatiertenString() gibt.

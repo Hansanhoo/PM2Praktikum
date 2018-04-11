@@ -28,16 +28,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="4" language="java" name="Medium" project="Mediathek_VorlageBlatt01" 
-    file="/Mediathek_VorlageBlatt01/src/Medium.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1497" y="-43"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </interface>  
-  <class id="5" language="java" name="Kunde" project="Mediathek_VorlageBlatt01" 
+  <class id="4" language="java" name="Kunde" project="Mediathek_VorlageBlatt01" 
     file="/Mediathek_VorlageBlatt01/src/Kunde.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="261" width="270" x="1693" y="-101"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -46,7 +37,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="AusleihWerkzeug" project="Mediathek_VorlageBlatt01" 
+  <class id="5" language="java" name="AusleihWerkzeug" project="Mediathek_VorlageBlatt01" 
     file="/Mediathek_VorlageBlatt01/src/AusleihWerkzeug.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="193" width="346" x="684" y="293"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -55,7 +46,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="MediathekWerkzeug" project="Mediathek_VorlageBlatt01" 
+  <class id="6" language="java" name="MediathekWerkzeug" project="Mediathek_VorlageBlatt01" 
     file="/Mediathek_VorlageBlatt01/src/MediathekWerkzeug.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="196" width="348" x="299" y="289"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -64,7 +55,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="AusleiheMedienauflisterWerkzeug" project="Mediathek_VorlageBlatt01" 
+  <class id="7" language="java" name="AusleiheMedienauflisterWerkzeug" project="Mediathek_VorlageBlatt01" 
     file="/Mediathek_VorlageBlatt01/src/AusleiheMedienauflisterWerkzeug.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1328" y="450"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -73,72 +64,92 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <realization id="9">    
+  <association id="8">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="9" name="_verleihService">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="10" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="11">    
     <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="2"/>  
   </realization>  
-  <association id="10">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="11" name="_medium"/>      
-      <multiplicity id="12" minimum="0" maximum="1"/>    
+  <association id="12">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="13" name="_medienAuflisterWerkzeug">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="14" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
+    <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="13">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="14" name="_ausleihWerkzeug"/>      
-      <multiplicity id="15" minimum="0" maximum="1"/>    
+  <association id="15">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="16" name="_ausleihWerkzeug">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="17" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
+    <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="16">    
+  <association id="18">    
     <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="17" name="_verleihkarten"/>      
-      <multiplicity id="18" minimum="0" maximum="2147483647"/>    
+      <attribute id="19" name="_verleihkarten">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="20" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="19">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="20" name="_verleihService"/>      
-      <multiplicity id="21" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="22">    
+  <association id="21">    
     <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="23" name="_verleihService"/>      
-      <multiplicity id="24" minimum="0" maximum="1"/>    
+      <attribute id="22" name="_verleihService">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="23" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="25">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="26" name="_verleihService"/>      
-      <multiplicity id="27" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="28">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="29" name="_medienAuflisterWerkzeug"/>      
-      <multiplicity id="30" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="31">    
+  <association id="24">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="32" name="_entleiher"/>      
-      <multiplicity id="33" minimum="0" maximum="1"/>    
+      <attribute id="25" name="_entleiher">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="26" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="27">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="28" name="_verleihService">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="29" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

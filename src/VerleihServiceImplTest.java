@@ -37,10 +37,11 @@ public class VerleihServiceImplTest
         setUpVerleihService();
     }
 
-    @Test
+    
     // Alle Testmethoden erhalten die Annotation @Test. Dafür müssen diese nicht
     // mehr mit test im Namen beginnen. Dies wird jedoch aus Gewohnheit
     // oft weiter verwendet.
+    @Test
     public void testKundenstamm()
     {
         assertTrue(_verleihService.kundeImBestand(_homer));
@@ -62,51 +63,38 @@ public class VerleihServiceImplTest
                     _medienbestand.getMedien()));
         }
     }
-
     @Test
     public void testVerleiheAn()
     {
-    	
-    	_verleihService.verleiheAn(_homer, _medienbestand.getMedien(), Datum.get(29, 3, 1991));
-    	
-    	Verleihkarte testVerleihKarte1 = new Verleihkarte(_homer,_abbey, Datum.get(29, 3, 1991) );
-    	Verleihkarte testVerleihKarte2 = new Verleihkarte(_homer,_bad, Datum.get(29, 3, 1991) );
-    	Verleihkarte testVerleihKarte3 = new Verleihkarte(_homer,_shape, Datum.get(29, 3, 1991) );
-    	
     	List<Medium> testMedien = new ArrayList<Medium>();
     	testMedien =  _verleihService.getAusgelieheneMedienFuer(_homer);
     	
-    	Assert.assertEquals(testMedien.get(2).getTitel(), testVerleihKarte1.getMedium().getTitel() );    	
-    	Assert.assertEquals(testMedien.get(1).getTitel(), testVerleihKarte2.getMedium().getTitel() );
-    	Assert.assertEquals(testMedien.get(0).getTitel(), testVerleihKarte3.getMedium().getTitel() );
- 
-    	
-    }
-
-    @Test
-    public void testIstVerliehen()
-    {
-    	Verleihkarte testVerleihKarte1 = new Verleihkarte(_homer,_abbey, Datum.get(29, 3, 1991) );
-    	List<Medium> testMedien = new ArrayList<Medium>();
-    	testMedien.add(_abbey);
-    	_verleihService.verleiheAn(_homer, testMedien, Datum.get(29, 3, 1991) );
-    	Assert.assertTrue(_verleihService.istVerliehen(_abbey));
-    	
-    }
-    @Test
-    public void testHinzufuegenzurVerleihkartenMap()
-    {
+    	Assert.assertEquals(testMedien.size(),0);   
     	
     	_verleihService.verleiheAn(_homer, _medienbestand.getMedien(), Datum.get(29, 3, 1991));
     	
-    	Assert.assertEquals(_verleihService.getAusgelieheneMedienFuer(_homer).size(), 3);
+    	testMedien = new ArrayList<Medium>();
+    	testMedien =  _verleihService.getAusgelieheneMedienFuer(_homer);
+    	
+    	Assert.assertEquals(testMedien.size(),3);    	
+    
+ 
+    	
+    }
+    @Test
+    public void testIstVerliehen()
+    {
+       	List<Medium> testMedien = new ArrayList<Medium>();
+    	testMedien.add(_abbey);
+    	_verleihService.verleiheAn(_homer, testMedien, Datum.get(29, 3, 1991) );
+    	
+    	Assert.assertTrue(_verleihService.istVerliehen(_abbey));
     	
     }
 
     @Test
     public void testZurueckGeben()
-    {
-    	Verleihkarte testVerleihKarte1 = new Verleihkarte(_homer,_abbey, Datum.get(29, 3, 1991) );
+    {    	
     	List<Medium> testMedien = new ArrayList<Medium>();
     	testMedien.add(_abbey);
     	

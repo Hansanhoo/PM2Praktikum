@@ -29,7 +29,7 @@ class MedienDetailAnzeigerWerkzeug
      * 
      * @param medien Eine Liste von Medien.
      * 
-     * @require (medien != null)
+     * @require (medien != null)     * 
      */
     public void setMedien(List<Medium> medien)
     {
@@ -42,7 +42,8 @@ class MedienDetailAnzeigerWerkzeug
         String bezeichnung;
         String showMe ="";
         
-        //Man braucht kein InstanceOf mehr, da m weiß welches Medium es ist und dynamisch in die jeweilige Klasse geht und dort die Methode getFormatiertenString aufruft. 
+        //Man braucht kein InstanceOf mehr, da m weiß welches Medium es ist und dynamisch in die jeweilige Klasse geht und dort die Methode getFormatiertenString aufruft. Dynamisches Binden...
+        //Die KLasse gibt den String selber zurück, man muss ihn nicht erst erstellen und vorher noch prüfern, welche instanceof  CD,DVD,Videospiel es ist.
         //Da m ein Medium ist und alle Klasen die ein Medium sind das Interface Medium implementiert haben ist auch sicher gestellt, dass es in m die Methode getFormatiertenString() gibt.
         for(Medium m : medien) {        	
         	//+= alle die ausgewählt sonst nur jeweiliges => ich fand alle sinnvoller !daher +=!        	

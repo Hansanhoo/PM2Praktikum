@@ -200,6 +200,7 @@ class MedienEinleser
                  
                  // Was ist wenn return new CD(titel, kommentar, interpret,
                  // Integer.parseInt(spiellaenge));  
+                 // warum abgespeichert erst nach swithc return ?=
         	case "DVD":
         		String regisseur = naechsterToken(tokenizer);
                 int laufzeit = Integer.valueOf(naechsterToken(tokenizer));

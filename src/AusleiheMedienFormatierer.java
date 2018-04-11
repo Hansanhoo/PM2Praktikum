@@ -13,7 +13,7 @@ public class AusleiheMedienFormatierer
     private final Medium _medium;
 
     private final boolean _istVerliehen;
-
+//check git 
     /**
      * Initialisiert einen neuen AusleiheMedienformatierer für das angegebene
      * Medium.

@@ -212,6 +212,7 @@ class VerleihServiceImpl extends AbstractObservableService implements
 	        for (Medium medium : medien)
 	        {
 	            Verleihkarte karte = new Verleihkarte(kunde, medium, ausleihDatum);
+	            //Ohne es in die Map zu schreiben.. 
 	            _verleihkarten.put(medium,karte);
 	        }
     	}
